@@ -66,13 +66,15 @@ function callCommand($URL, $cmdArr, $SECRET)
 	$xmlUrl = $url . "signature=" . $signature;
 	
 // 	echo "<br>by eonjeong <br>";
-// 	print_r($xmlUrl);
+ 	print_r($xmlUrl);
 // 	echo "<br>-----------------------------<br>";
 	
 	$orig_error_reporting = error_reporting ();
 	error_reporting ( 0 );
 	$arrXml = objectsIntoArray ( simplexml_load_string ( file_get_contents ( $xmlUrl ) ) );
 	error_reporting ( $orig_error_reporting );
+	
+	var_dump_enter($arrXml);
 	
 	return $arrXml;
 }

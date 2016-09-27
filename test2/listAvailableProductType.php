@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./CSS/listCss.css" />
-<title>Server��û</title>
+<title>Server 생성</title>
 </head>
 <body>
 <?php 
 include('api_constants.php');
 include ('./refer/callAPI.php');
+include('var_dump_enter.php');
 
 $URL = "https://api.ucloudbiz.olleh.com/server/v1/client/api?";
 
