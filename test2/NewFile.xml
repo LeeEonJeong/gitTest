@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listvirtualmachinesresponse>
+	<virtualmachine>
+		<id>1c7f44c3-9153-4824-8618-1f2e1ddd6710</id>
+		<name>TestCloud3</name>
+		<displayname>TestCloud3</displayname>
+		<account>TES_T900150_M3190</account>
+		<domainid>0a27431b-4891-4ac6-b240-9a258f84f13e</domainid>
+		<domain>TES_USER</domain>
+		<created>2012-09-05T02:17:06+0900</created>
+		<state>Running</state>
+		<haenable>true</haenable>
+		<zoneid>8f6d3a05-e64d-4c42-b6fc-e4628499c352</zoneid>
+		<zonename>epc-staging-kr-1</zonename>
+		<templateid>bea7ccb7-ed3d-45a6-b2d5-6dc623b85520</templateid>
+		<templatename>CentOS 5.4 64bit kernel 0105</templatename>
+		<templatedisplaytext>CentOS 5.4 64bit kernel 0105
+		</templatedisplaytext>
+		<passwordenabled>true</passwordenabled>
+		<serviceofferingid>9defc8c1-be81-4c38-a51c-1186fabe8945
+		</serviceofferingid>
+
+		37
+		<serviceofferingname>
+			Tier2 1core 1GB Instance. Virtual Networking
+		</serviceofferingname>
+			<cpunumber>1</cpunumber>
+			<cpuspeed>2000</cpuspeed>
+			<memory>1024</memory>
+			<cpuused>0.09%</cpuused>
+			<networkkbsread>4226183</networkkbsread>
+			<networkkbswrite>4226160</networkkbswrite>
+			<guestosid>01897765-4275-4713-9a1a-12fd3da73093</guestosid>
+			<rootdeviceid>0</rootdeviceid>
+			<rootdevicetype>IscsiLUN</rootdevicetype>
+			<nic>
+				<id>b1b275c3-0887-4813-ac5b-1896e21e856d</id>
+				<networkid>37ffc22d-9330-43c1-9cf4-9ed6eb6f15f2</networkid>
+				<netmask>255.255.0.0</netmask>
+				<gateway>172.27.0.1</gateway>
+				<ipaddress>172.27.146.210</ipaddress>
+				<traffictype>Guest</traffictype>
+				<type>Isolated</type>
+				<isdefault>true</isdefault>
+				<macaddress>02:00:62:c2:00:06</macaddress>
+			</nic>
+			<hypervisor>XenServer</hypervisor>
+	</virtualmachine>
+	<virtualmachine> … </virtualmachine>
+	<count>3</count>
+</listvirtualmachinesresponse> 

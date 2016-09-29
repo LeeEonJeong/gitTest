@@ -1,42 +1,22 @@
 <?php
-
-include('api_constants.php');
-include ('./refer/callAPI.php');
-include('var_dump_enter.php');
+ echo 'while¹® : ';
+ $value = 5;
+ while($value>0) {
+ 	echo $value . '';
+ 	$value--;
+ }
  
-$URL = "https://api.ucloudbiz.olleh.com/server/v1/client/api?";
-
-$vmid = "c545eb01-5538-4778-a6d6-9ec4937d6231";
-$ipaddressid = "465e6db6-7b44-4ea4-9ab2-b4ff6c616494";
-
-$cmdArr = array(
-		"command" => "createPortForwardingRule",
-		"ipaddressid" => $ipaddressid,
-		"privateport" => 22,
-		"protocol" => "TCP",
-		"publicport" => "5000",
-		"virtualmachineid" => $vmid,
-		"apikey" => API_KEY
-);
-//-----------------------(5) createPortForwardingRuleë¡œ 22ë²ˆ(ssh ì ‘ì†í¬íŠ¸) ì™¸ë¶€ ì˜¤í”ˆ
- $result = callCommand($URL, $cmdArr, SECERET_KEY);
- $jobid = $result["jobid"];
+ echo'<br>do~while¹® : ';
+ $value=5;
+ do{
+ 	echo $value . '';
+ 	$value--;
+ }while($value >10);
  
-do {
- 	$cmdArr = array(
- 			"command" => "queryAsyncJobResult",
- 			"jobid" => $jobid,
- 			"apikey"  => API_KEY
- 	);
- 	$result2 = callCommand($URL, $cmdArr, SECERET_KEY);
- 
- 	$jobStatus = $result2["jobstatus"];
- 	if ($jobStatus == 2) {
- 		printf($result2["jobresult"]);
- 		exit;
- 	}
-} while ($jobStatus != 1);
- 
- 
- 
+ echo '<br>foreach¹® : ';
+ $fruit = array('apple' => 2000, 'orange' => 1000, 'grape' => 2000);
+ foreach ($fruit as $one => $two){
+ 	echo $one . '´Â' . $two . '¿ø';
+ }
+  
 ?>
