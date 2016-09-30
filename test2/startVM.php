@@ -19,9 +19,9 @@ $startcmdArr = array(
 );
 var_dump_enter($startcmdArr);
 $seceret_key = SECERET_KEY;
-$result = callCommand($URL, $startcmdArr, $seceret_key);
+$productTypesByZone = callCommand($URL, $startcmdArr, $seceret_key);
 sleep(1);
-$jobId = $result["jobid"];
+$jobId = $productTypesByZone["jobid"];
 echo $jobId;
 
 do {

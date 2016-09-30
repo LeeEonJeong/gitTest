@@ -24,9 +24,9 @@ $destroycmdArr = array(
 );
 var_dump_enter($destroycmdArr);
 $seceret_key = SECERET_KEY;
-$result = callCommand($URL, $destroycmdArr, $seceret_key);
+$productTypesByZone = callCommand($URL, $destroycmdArr, $seceret_key);
 sleep(1);
-$jobId = $result["jobid"];
+$jobId = $productTypesByZone["jobid"];
 echo $jobId;
 /*
 do {

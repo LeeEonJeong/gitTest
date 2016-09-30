@@ -4,24 +4,28 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./CSS/listCss.css" />
 <title>Server 생성</title>
+<style>
+table, tr, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
 </head>
 <body>
 <?php 
 include('api_constants.php');
 include ('./refer/callAPI.php');
-include('var_dump_enter.php');
-
-$URL = "https://api.ucloudbiz.olleh.com/server/v1/client/api?";
-
+ 
+ 
 $listProductcmdArr = array(
 		"command" => "listAvailableProductTypes",
 		"apikey" => API_KEY
 );
 $seceret_key = SECERET_KEY;
-$result = callCommand($URL, $listProductcmdArr, $seceret_key);
+$productTypesByZone = callCommand(URL, $listProductcmdArr, $seceret_key);
 //var_dump_enter($result);
-$count = $result['count'];
-$result = $result['producttypes'];
+$count = $productTypesByZone['count'];
+$productTypesByZone = $productTypesByZone['producttypes'];
 ?>
  
 <table>
@@ -35,28 +39,28 @@ $result = $result['producttypes'];
 		</tr>
 <?php 
 for($i=0; $i<$count; $i++){
-	if($result[$i]['productstate']=="available") {
-		if(isset($result[$i]['diskofferingid'])){
-			$diskofferingid = $result[$i]['diskofferingid'];
+	if($productTypesByZone[$i]['productstate']=="available") {
+		if(isset($productTypesByZone[$i]['diskofferingid'])){
+			$diskofferingid = $productTypesByZone[$i]['diskofferingid'];
 		}else {
       		$diskofferingid = "rootonly";
      	}
 		echo "<tr><form action='deploy_result.php' method='post'><td>";
-		echo $result[$i]['product'];
-		echo "<input type='hidden' name='productid' value='".$result[$i]['productid']."'/>";
+		echo $productTypesByZone[$i]['product'];
+		echo "<input type='hidden' name='productid' value='".$productTypesByZone[$i]['productid']."'/>";
 		 
 		echo "</td> <td>";
-		echo $result[$i]['diskofferingdesc'];
+		echo $productTypesByZone[$i]['diskofferingdesc'];
 		echo "<input type='hidden' name='diskofferingid' value='".$diskofferingid."'/>";
 		echo "</td> <td>";
-		echo $result[$i]['serviceofferingdesc'];
-		echo "<input type='hidden' name='serviceofferingid' value='".$result[$i]['serviceofferingid']."'/>";
+		echo $productTypesByZone[$i]['serviceofferingdesc'];
+		echo "<input type='hidden' name='serviceofferingid' value='".$productTypesByZone[$i]['serviceofferingid']."'/>";
 		echo "</td> <td>";
-		echo $result[$i]['templatedesc'];
-		echo "<input type='hidden' name='templateid' value='".$result[$i]['templateid']."'/>";
+		echo $productTypesByZone[$i]['templatedesc'];
+		echo "<input type='hidden' name='templateid' value='".$productTypesByZone[$i]['templateid']."'/>";
 		echo "</td> <td>";
-		echo $result[$i]['zonedesc'];
-		echo "<input type='hidden' name='zoneid' value='".$result[$i]['zoneid']."'/>";
+		echo $productTypesByZone[$i]['zonedesc'];
+		echo "<input type='hidden' name='zoneid' value='".$productTypesByZone[$i]['zoneid']."'/>";
 		echo "</td><td><input type='submit' value='신청'/></td></tr></form>";
 	}
 }

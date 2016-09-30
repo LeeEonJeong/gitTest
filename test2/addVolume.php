@@ -46,7 +46,7 @@ $listProductcmdArr = array(
     "apikey" => API_KEY
 );
 $productTypesByZone = callCommand($URL, $listProductcmdArr, SECERET_KEY);
-var_dump_enter($productTypesByZone);
+ 
 $result_num = $productTypesByZone['count'];
 //echo $result_num;
 $productTypesByZone = $productTypesByZone['virtualmachine'];

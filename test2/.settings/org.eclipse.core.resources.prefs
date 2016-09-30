@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
-encoding/<project>=UTF-8
-encoding/api_test_all.php=UTF-8
+encoding/api_constants.php=UTF-8
+encoding/deploy_result.php=UTF-8
+encoding/index.php=UTF-8
+encoding/listAvailableProductType.php=UTF-8
+encoding/stopVM.php=UTF-8
