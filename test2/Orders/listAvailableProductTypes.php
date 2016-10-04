@@ -51,8 +51,9 @@
 				return $productTypes;
 		}
 	}
+	//myPrint(getProductTypes('templateid', '6ff9b490-a41c-4e4f-89aa-9426ecb5a007'));
 	
-	function sortArray($condition, $array){ //파라미터로 온 배열 중에서 해당 condition에 따라 구별하기 //???depth에 따라 다름
+	function sortArrayProductTypes($condition, $array){ //파라미터로 온 배열 중에서 해당 condition에 따라 구별하기 //???depth에 따라 다름
 		$result = array(); //condition별로 구별 (x : condition, x_value : producttype)
 			
 		$oldValue="";
@@ -75,7 +76,7 @@
 		return $result;
 	}
 	
-	function getProduct($templateid, $zoneid, $serviceofferingid){
+	function getProductType($templateid, $zoneid, $serviceofferingid){
 		$productTypes = getProductTypes('templateid',$templateid);
 // 		myPrint($productTypes);
 // 		echo'<br>======<br>';
@@ -86,7 +87,7 @@
 			}
 		}
 	}
-	
+	//myPrint(sortProductTypes('templateid'));
 	//myPrint( getProductTypes('templateid','b0e51172-fb70-467e-a1f8-e9659fb3eaaf'));
 	//myPrint(getProduct('b0e51172-fb70-467e-a1f8-e9659fb3eaaf','eceb5d65-6571-4696-875f-5a17949f3317','6e61c63c-6204-4522-ad23-6894512083c4'));
 	//myPrint(getListAvailableProductTypes());

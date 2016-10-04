@@ -9,9 +9,9 @@ table, tr, td {
 }
 </style>
 <script>
-	function selectZoneid(zoneid){
-		alert(zoneid.value);
-		document.getElementById("selectZone").innerHTML("<input type='hidden' value=;
+	function test(){
+		alert("window.open 테스트");
+		window.open("www.naver.com");
 	}
 </script>
 </head>
@@ -25,6 +25,7 @@ $listZones = getlistZones ();
  
 
 ?>
+<input type=button onclick="test()"/><br>
 <h2>Virtual Machine 생성하기</h2>
 <form method='post' action='deployVirtualMachine.php'>
 	os선택 :  

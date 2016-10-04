@@ -1,0 +1,15 @@
+db접속 함수
+
+로그인 확인 함수
+
+http://ljs93kr.tistory.com/20 참고
+
+정지하게 되면
+
+OS초기화랑 비밀번호 변경 삭제 가능 - 디딤 삭제기능 어디?
+
+//   document.forms[num].action = 'startVM.php';
+//   document.forms[num].method = 'post';
+//   document.forms[num].submit();
+
+echo "<input type='button' value='시작' onclick = 'func('updateVirtualMachine','".$temp['id']."')'/>";

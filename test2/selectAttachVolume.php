@@ -14,7 +14,7 @@ table, tr, td {
  
 <table>
 <?php 
-include ('listVirtualMachines.php');
+include ('Server/listVirtualMachines.php');
 
 $volumeid = $_POST['volumeid'];
 $volumezoneid = $_POST['volumezoneid'];

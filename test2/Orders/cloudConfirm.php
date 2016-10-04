@@ -25,7 +25,7 @@ echo 'zoneid : '.$zoneid.'<br>';
 echo 'serviceofferingid : '.$serviceofferingid.'<br>';
 
 echo '<h4>선택한 VM 사양</h4>';
-myPrint(getProduct($templateid, $zoneid, $serviceofferingid));
+myPrint(getProductType($templateid, $zoneid, $serviceofferingid));
 ?>
 
 <input type="hidden" name="templateid" value="<?=$templateid?>"/>
